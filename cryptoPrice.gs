@@ -1,6 +1,6 @@
 /*
 
-=cryptoPrice
+=cryptoPrice  v1.0
 Google Spreadsheets coinmarketcap.com cryptocurrency prices 
 By Stuart Johnson, Logic Ethos Ltd
 GNU General Public License, version 3 (GPL-3.0) 
