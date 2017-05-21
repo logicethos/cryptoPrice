@@ -611,8 +611,17 @@ function cryptoPriceS(coin,fiat,dateLoc)
     fiat=fiat.toLowerCase();
     var json = ImportJSON(priceURL(coin,fiat),"/price_"+fiat+",/last_updated", "noInherit,noTruncate,rawHeaders,noHeaders");
   
-    var date = new Date(json[0][0]*1000);
-    var price = parseFloat(json[0][1]);
+    var date,price;
+    if (json[0][0]>1483228800)  //Check that this field is the epoch date 
+    {    
+       date = new Date(json[0][0]*1000);
+       price = parseFloat(json[0][1]);
+    }
+    else
+    {
+       price = parseFloat(json[0][0]);
+       date = new Date(json[0][1]*1000);        
+    }
   
     if (dateLoc=="top")
     {
